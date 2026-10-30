@@ -1,7 +1,15 @@
-# Form Studio static demo
+# SwiftGLB catalog
 
-Generated locally with Simply Static 3.8.20. Public files are in site/. WordPress, database backups, credentials, inquiries and the SwiftGLB lab are excluded.
+Public files are in `site/`. They are generated on the server from the WordPress catalog with Simply Static, then published to https://swiftglb.github.io/.
 
-Prepared for https://github.com/SwiftGLB/SwiftGLB.github.io. Public base path: /.
+WordPress, the database, and login details stay on the server. This repository only receives the static pages, images, CSS, and JavaScript.
 
-Publishing requires a manual run of the Pages workflow after owner approval. Pushing a commit alone does not publish this package.
+## Publish again
+
+On the server, after products or 3D models change:
+
+```bash
+/var/www/form-studio/publish-swiftglb.sh
+```
+
+The script exports the site, commits `site/`, pushes `main`, and starts the Pages workflow. Pushing alone does not update the live site; the workflow packages `site/` and deploys it.

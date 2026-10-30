@@ -1,5 +1,5 @@
-@font-face { font-family: Manrope; src: url('/wp-content/themes/form-studio/assets/fonts/manrope-latin.woff2') format('woff2'); font-style: normal; font-weight: 200 800; font-display: swap; }
-@font-face { font-family: 'DM Serif Display'; src: url('/wp-content/themes/form-studio/assets/fonts/dm-serif-display-italic-latin.woff2') format('woff2'); font-style: italic; font-weight: 400; font-display: swap; }
+@font-face { font-family: Manrope; src: url('https://swiftglb.github.io/wp-content/themes/form-studio/assets/fonts/manrope-latin.woff2') format('woff2'); font-style: normal; font-weight: 200 800; font-display: swap; }
+@font-face { font-family: 'DM Serif Display'; src: url('https://swiftglb.github.io/wp-content/themes/form-studio/assets/fonts/dm-serif-display-italic-latin.woff2') format('woff2'); font-style: italic; font-weight: 400; font-display: swap; }
 
 :root {
   --background: #111314; --surface: #191c1d; --text: #f4f2ed; --muted: #a5aaa7;
@@ -527,6 +527,40 @@ model-viewer:focus-visible { outline-color: var(--ink); outline-offset: -8px; }
   .error-number { top: 210px; font-size: 140px; }
 }
 @media (max-width: 374px) { .hero-actions { gap: 13px; } .hero-actions .button { padding-inline: 15px; gap: 13px; } .hero-actions .text-link { font-size: 9px; gap: 7px; } .hero-product { min-height: 360px; } .card-view-label { font-size: 6px; } }
+.hero-model-link { background: #fff; }
+.catalog-card .project-image { background: #fff; aspect-ratio: 1; }
+.catalog-card .card-render { object-fit: contain; background: #fff; padding: 8%; }
+.woocommerce ul.products { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px 28px; list-style: none; margin: 0; padding: 44px 0 8px; clear: both; }
+.woocommerce ul.products::before, .woocommerce ul.products::after { display: none; }
+.woocommerce ul.products li.product { width: auto !important; margin: 0 !important; float: none !important; }
+.woocommerce-pagination { margin: 12px 0 80px; }
+.woocommerce-pagination ul.page-numbers { display: flex; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.woocommerce-pagination .page-numbers { display: inline-block; padding: 8px 13px; border: 1px solid var(--line); }
+.woocommerce-pagination .page-numbers.current { color: var(--accent); border-color: var(--accent); }
+.product-layout { display: grid; grid-template-columns: 1.15fr .85fr; gap: 64px; align-items: center; padding-bottom: 28px; }
+.product-gallery .woocommerce-product-gallery,
+.product-gallery .flex-viewport,
+.product-gallery .woocommerce-product-gallery__wrapper,
+.product-gallery .woocommerce-product-gallery__image { background: #fff; position: relative; }
+.product-gallery .woocommerce-product-gallery__image img { width: 100%; height: auto; object-fit: contain; background: #fff; }
+.product-gallery .woocommerce-product-gallery { margin: 0; }
+.product-summary .eyebrow { color: var(--accent); margin-bottom: 18px; }
+.product-summary .eyebrow a:hover { color: var(--text); }
+.product-summary .product_title { font-size: clamp(42px, 4.6vw, 68px); margin-bottom: 18px; }
+.product-summary .woocommerce-product-details__short-description { color: var(--muted); font-size: 14px; line-height: 1.9; max-width: 460px; }
+.product-summary .price, .product-summary form.cart, .woocommerce span.onsale, .woocommerce a.button.add_to_cart_button { display: none !important; }
+.model-note { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.8; max-width: 440px; }
+.related.products { padding: 36px 0 88px; border-top: 1px solid var(--line); }
+.related.products > h2 { font-size: clamp(32px, 3vw, 46px); margin-bottom: 8px; }
+@media (max-width: 980px) {
+  .woocommerce ul.products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 20px; }
+  .product-layout { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 600px) {
+  .woocommerce ul.products { grid-template-columns: 1fr; padding-top: 28px; }
+  .product-summary .product_title { font-size: 40px; }
+  .related.products { padding-bottom: 64px; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
