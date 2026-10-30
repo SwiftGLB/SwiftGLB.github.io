@@ -1,0 +1,36 @@
+{
+  "repository": "https://github.com/SwiftGLB/SwiftGLB.github.io",
+  "base": "/",
+  "canonicalOrigin": "https://swiftglb.github.io",
+  "publicRoutes": [
+    "/",
+    "/projects/",
+    "/industries/",
+    "/studio/",
+    "/privacy/",
+    "/projects/premium-performance-tire/",
+    "/projects/precision-brake-disc/",
+    "/projects/luxury-leather-handbag/",
+    "/projects/performance-running-shoe/",
+    "/projects/minimalist-wristwatch/",
+    "/projects/contemporary-lounge-chair/",
+    "/projects/wireless-headphones/",
+    "/projects/industrial-mechanical-component/",
+    "/industries/auto-parts/",
+    "/industries/automotive-tires/",
+    "/industries/bags-leather-goods/",
+    "/industries/electronics/",
+    "/industries/fashion/",
+    "/industries/footwear/",
+    "/industries/furniture-interiors/",
+    "/industries/industrial-products/",
+    "/industries/jewelry/"
+  ],
+  "exporter": {
+    "name": "Simply Static",
+    "version": "3.8.20",
+    "repository": "https://github.com/Simply-Static/simply-static",
+    "delivery": "local"
+  },
+  "preparedAtUtc": "2026-10-30T00:05:46.281Z"
+}

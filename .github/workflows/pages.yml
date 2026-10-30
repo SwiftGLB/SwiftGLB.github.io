@@ -1,0 +1,51 @@
+name: Publish reviewed Form Studio demo
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - name: Check out the reviewed static export
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check the Pages configuration
+        uses: actions/configure-pages@v6.0.0
+      - name: Verify the static entry points
+        run: |
+          test -f site/index.html
+          test -f site/404.html
+          test -f site/.nojekyll
+          if find site -type f \( -iname '*.php' -o -iname '*.sql' -o -name '.env' \) | grep -q .; then
+            echo "The artifact contains server source or private configuration."
+            exit 1
+          fi
+      - name: Package the reviewed static site
+        uses: actions/upload-pages-artifact@v5.0.0
+        with:
+          path: site
+  publish:
+    needs: package
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy the approved artifact
+        id: deployment
+        uses: actions/deploy-pages@v5.0.1
